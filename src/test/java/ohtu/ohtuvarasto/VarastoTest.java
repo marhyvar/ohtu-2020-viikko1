@@ -58,6 +58,7 @@ public class VarastoTest {
     @Test
     public void lisaysLisaaLiikaaSaldoa() {
     	varasto.lisaaVarastoon(20);
+    	//ei voi lisätä muuta kuin varaston tilavuuden verran
     	assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
     
