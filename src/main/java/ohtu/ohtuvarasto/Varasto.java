@@ -18,18 +18,12 @@ public class Varasto {
     }
 
     public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan
-        boolean a = tilavuus > alkuSaldo;
-        boolean b = alkuSaldo > 0;
-        boolean c = tilavuus > 0;
-        if (b == c) { // molemmat samanmerkkisiä
-            this.saldo = 0.0;
-            this.tilavuus = 0.0;
-            if (a == b) {
-                this.tilavuus = tilavuus;
-                this.saldo = alkuSaldo;
+        if (tilavuus > 0) {//tilavuus positiivinen
+            this.tilavuus = tilavuus;
+            if (alkuSaldo > Math.max(tilavuus, 0)) { //alkuSaldo varmasti positiivinen
+                this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
             } else {
-                this.tilavuus = tilavuus;
-                this.saldo = tilavuus; //ylimäärä hukkaan
+                this.saldo = alkuSaldo; 
             }
         } else {
             this.tilavuus = 0.0;
