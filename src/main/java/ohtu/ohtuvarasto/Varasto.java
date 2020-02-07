@@ -71,34 +71,7 @@ public class Varasto {
         saldo = saldo - maara;  // vähennetään annettava saldosta
         return maara;
     }
-    public void breakCheckStyle() {
-        //ei sisäkkäisiä for-lauseita
-        for( int i=0; i<1; i++ ) {
-            for( int j=0; i<j; j++ ) {
-                System.out.println("virhe");
-            } 
-        }
-          // kaaret oikein
-        if ( 1 > 0 ) 
-                {
-            System.out.println("virhe");
-        }  
-        //ei yli yhtä sisäkkäistä if-lausetta  
-        if (true) {
-            if (true) {
-                if (true) {
-                    System.out.println("virhe");
-                }
-            }
-        }
-          //sisennys oikein ja metodien pituus max 15
-System.out.println("virhe");
-System.out.println("virhe");
-System.out.println("virhe");
-System.out.println("virhe");
-System.out.println("virhe");
-System.out.println("virhe");
-    }
+
     // --- Merkkijonoesitys Varasto-oliolle: ----
     public String toString() {
         return ("saldo = " + saldo + ", vielä tilaa " + paljonkoMahtuu());
