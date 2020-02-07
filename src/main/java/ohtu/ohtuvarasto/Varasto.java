@@ -23,9 +23,9 @@ public class Varasto {
             if (alkuSaldo > Math.max(tilavuus, 0)) { //alkuSaldo varmasti positiivinen
                 this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
             } else {
-                this.saldo = alkuSaldo; 
+                this.saldo = alkuSaldo; // alkusaldo negatiivinen
             }
-        } else {
+        } else { // alkusaldo ja tilavuus negatiivisia
             this.tilavuus = 0.0;
             this.saldo = 0.0;
         }
