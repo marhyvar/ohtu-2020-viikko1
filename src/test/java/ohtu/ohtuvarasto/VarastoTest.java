@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class VarastoTest {
 
-    Varasto varasto, varasto2, varasto3, varasto4, varasto5;
+    Varasto varasto, varasto2, varasto3, varasto4, varasto5, varasto6;
     double vertailuTarkkuus = 0.0001;
 
     @Before
@@ -22,6 +22,7 @@ public class VarastoTest {
         varasto3 = new Varasto(-1, -1);
         varasto4 = new Varasto(10, 12);
         varasto5 = new Varasto(-9);
+        varasto6 = new Varasto(10, -1);
     }
 
     @Test
@@ -58,7 +59,7 @@ public class VarastoTest {
     @Test
     public void lisaysLisaaLiikaaSaldoa() {
     	varasto.lisaaVarastoon(20);
-    	//ei voi lisätä muuta kuin varaston tilavuuden verran
+    	//ei voi lisï¿½tï¿½ muuta kuin varaston tilavuuden verran
     	assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
     }
     
@@ -102,6 +103,11 @@ public class VarastoTest {
     @Test
     public void alkusaldo() {
     	assertEquals(8, varasto2.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+
+    @Test
+    public void alkusaldo2() {
+        assertEquals(0, varasto6.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
