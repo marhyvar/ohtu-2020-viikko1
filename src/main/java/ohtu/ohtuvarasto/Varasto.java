@@ -17,15 +17,15 @@ public class Varasto {
         saldo = 0;     // oletus: varasto on tyhjä
     }
 
-    public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan
-        if (tilavuus > 0) {//tilavuus positiivinen
+    public Varasto(double tilavuus, double alkuSaldo) { // kuormitetaan      
+        if (Math.min(tilavuus, alkuSaldo) > 0) {
             this.tilavuus = tilavuus;
-            if (alkuSaldo > Math.max(tilavuus, 0)) { //alkuSaldo varmasti positiivinen
-                this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
+            if (alkuSaldo <= tilavuus) { 
+                this.saldo = alkuSaldo;
             } else {
-                this.saldo = alkuSaldo; // alkusaldo positiivinen ja pienempi kuin tilavuus
+                this.saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
             }
-        } else { // alkusaldo ja tilavuus negatiivisia
+        } else { 
             this.tilavuus = 0.0;
             this.saldo = 0.0;
         }
